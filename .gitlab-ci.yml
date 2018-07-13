@@ -13,6 +13,8 @@ before_script:
 
 build-master:
   stage: build
+  tags:
+   - docker
   script:
     - docker build -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
@@ -21,6 +23,8 @@ build-master:
   
 build-master:
   stage: deploy
+  tags:
+   - docker
   script:
     - sudo kubectl apply -f alertmanger-k8s.yaml
   only:
