@@ -9,15 +9,15 @@ services:
 
 
 before_script:
-  - sudo docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" 
-  - sudo export IMAGE_TAG=$CI_REGISTRY_IMAG:$(git rev-parse --short=8 $CI_COMMIT_SHA)
+  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" 
+  - export IMAGE_TAG=$CI_REGISTRY_IMAG:$(git rev-parse --short=8 $CI_COMMIT_SHA)
 
 
 build-master:
   stage: build
   script:
-    - sudo docker build -t "$IMAGE_TAG" .
-    - sudo docker push "$IMAGE_TAG"
+    - docker build -t "$IMAGE_TAG" .
+    - docker push "$IMAGE_TAG"
   only:
     - master
 
