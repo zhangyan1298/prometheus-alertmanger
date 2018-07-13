@@ -5,3 +5,4 @@
 
 FROM quay.io/prometheus/alertmanager:master
 COPY config.yml /etc/alertmanager/
+EXPOSE 9393
