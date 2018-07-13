@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: alertmanger-persiten
+ labels:
+  app: alertmanger-persiten
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: alertmanger-persiten
+ template:
+  metadata: 
+   name: alertmanger-persiten
+   labels:
+     app: alertmanger-persiten
+  spec:
+   containers:
+   - name: grafana-test
+     image: dockeryanxiao/grafana:master
+     imagePullPolicy: Always
+     volumeMounts:
+      - name: alertmanger-persiten
+        mountPath: /var/lib/grafana
+     env:
+     - name: GF_INSTALL_PLUGINS
+       value: "grafana-clock-panel,grafana-simple-json-datasource,grafana-kubernetes-app,raintank-worldping-app"
+     ports:
+     - containerPort: 3000
+     resources:
+      limits:
+       cpu: 0.3
+       memory: 250Mi
+      requests:
+       cpu: 0.2
+       memory: 200Mi
+     livenessProbe:
+     #     httpGet:
+     #       path: /
+     #       port: 3000
+     #       scheme: HTTP
+          tcpSocket:
+           port: 3000
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 5
+   volumes:
+   - name: alertmanger-persiten
+     hostPath:
+      path: "/mnt/resource/alertmanger"
+"
