@@ -19,6 +19,12 @@ build-master:
   only:
     - master
   
+build-master:
+  stage: deploy
+  script:
+    - sudo kubectl apply -f alertmanger-k8s.yml
+  only:
+    - master
 
 build:
   stage: build
