@@ -1,8 +1,9 @@
 global:
   # The smarthost and SMTP sender used for mail notifications.
-  smtp_smarthost: 'localhost:25'
-  smtp_from: 'alertmanager@example.org'
-
+  smtp_smarthost: 'smtp.163.com:25'
+  smtp_from: 'zyx956043615@163.com'
+  smtp_auth_username: 'zyx956043615@163.com'
+  smtp_auth_password: 'zyx956043615'
 # The root route on which each incoming alert enters.
 route:
   # The root route must not have any matchers as it is the entry point for
