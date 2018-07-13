@@ -17,11 +17,11 @@ spec:
   spec:
    containers:
    - name: grafana-test
-     image: dockeryanxiao/grafana:master
+     image: dockeryanxiao/alertmanger:master
      imagePullPolicy: Always
      volumeMounts:
       - name: alertmanger-persiten
-        mountPath: /var/lib/grafana
+        mountPath: /alertmanager
      env:
      - name: GF_INSTALL_PLUGINS
        value: "grafana-clock-panel,grafana-simple-json-datasource,grafana-kubernetes-app,raintank-worldping-app"
@@ -39,8 +39,8 @@ spec:
      #       path: /
      #       port: 3000
      #       scheme: HTTP
-          tcpSocket:
-           port: 3000
+     #     tcpSocket:
+     #      port: 3000
           initialDelaySeconds: 60
           timeoutSeconds: 5
           successThreshold: 1
