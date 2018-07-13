@@ -24,7 +24,7 @@ build-master:
 build-master:
   stage: deploy
   tags:
-   - docker
+   - master-shell
   script:
     - sudo kubectl apply -f alertmanger-k8s.yaml
   only:
