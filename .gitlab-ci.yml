@@ -6,8 +6,6 @@ services:
   - docker:dind
 
 
-
-
 before_script:
   - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" 
   - export IMAGE_TAG=$CI_REGISTRY_IMAG:$(git rev-parse --short=8 $CI_COMMIT_SHA)
