@@ -16,7 +16,7 @@ spec:
      app: alertmanger-persiten
   spec:
    containers:
-   - name: grafana-test
+   - name: alertmanger-test
      image: dockeryanxiao/alertmanger:master
      imagePullPolicy: Always
      volumeMounts:
