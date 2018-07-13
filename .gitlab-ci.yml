@@ -12,7 +12,7 @@ before_script:
  
 
 
-build-master:
+build-mater:
   stage: build
   tags:
    - docker
@@ -22,11 +22,10 @@ build-master:
   only:
     - master
   
-build-master:
+build-deploy:
   stage: deploy
   tags:
    - master-shell
-   - docker
   script:
     - sudo kubectl apply -f alertmanger-k8s.yaml
   only:
