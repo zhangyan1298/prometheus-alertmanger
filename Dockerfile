@@ -4,4 +4,4 @@
 # or build the binary first as part of a CI/CD pipeline.
 
 FROM quay.io/prometheus/alertmanager:master
-
+COPY config.yml /etc/alertmanager/
