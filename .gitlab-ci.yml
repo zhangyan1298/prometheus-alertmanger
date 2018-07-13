@@ -18,6 +18,9 @@ build-master:
     - docker push "$IMAGE_TAG"
   only:
     - master
+  tags:
+   - master-shell
+   - docker
 
 build:
   stage: build
