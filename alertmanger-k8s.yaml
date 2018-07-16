@@ -49,4 +49,4 @@ spec:
    - name: alertmanger-persiten
      hostPath:
       path: "/mnt/resource/alertmanger"
-"
+
