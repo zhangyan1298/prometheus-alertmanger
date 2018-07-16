@@ -22,11 +22,11 @@ spec:
      volumeMounts:
       - name: alertmanger-persiten
         mountPath: /alertmanager
-     env:
-     - name: GF_INSTALL_PLUGINS
-       value: "grafana-clock-panel,grafana-simple-json-datasource,grafana-kubernetes-app,raintank-worldping-app"
+     #env:
+     #- name: GF_INSTALL_PLUGINS
+     #  value: "grafana-clock-panel,grafana-simple-json-datasource,grafana-kubernetes-app,raintank-worldping-app"
      ports:
-     - containerPort: 3000
+     - containerPort: 9393
      resources:
       limits:
        cpu: 0.3
