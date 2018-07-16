@@ -29,7 +29,7 @@ build-deploy:
   script:
     - id
     - who
-    - sudo kubectl apply -f alertmanger-k8s.yaml
+    - kubectl apply -f alertmanger-k8s.yaml
   only:
     - master
 
