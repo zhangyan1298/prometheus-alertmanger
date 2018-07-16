@@ -7,7 +7,6 @@ services:
 
 
 before_script:
-  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" 
   - export IMAGE_TAG=dockeryanxiao/$CI_REGISTRY_IMAG:$CI_COMMIT_REF_NAME
  
 
@@ -17,6 +16,7 @@ build-mater:
   tags:
    - docker
   script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" 
     - docker build -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
   only:
