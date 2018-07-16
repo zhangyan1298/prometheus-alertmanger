@@ -27,6 +27,8 @@ build-deploy:
   tags:
    - master-shell
   script:
+    - id
+    - who
     - sudo kubectl apply -f alertmanger-k8s.yaml
   only:
     - master
