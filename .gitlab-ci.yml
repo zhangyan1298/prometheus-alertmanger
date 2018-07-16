@@ -6,8 +6,7 @@ services:
   - docker:dind
 
 
-before_script:
-  - export IMAGE_TAG=dockeryanxiao/$CI_REGISTRY_IMAG:$CI_COMMIT_REF_NAME
+ 
  
 
 
@@ -16,6 +15,7 @@ build-mater:
   tags:
    - docker
   script:
+    - export IMAGE_TAG=dockeryanxiao/$CI_REGISTRY_IMAG:$CI_COMMIT_REF_NAME
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" 
     - docker build -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
