@@ -29,7 +29,7 @@ route:
 
   # If an alert has successfully been sent, wait 'repeat_interval' to
   # resend them.
-  repeat_interval: 3h
+  repeat_interval: 1h
 
   # All the above attributes are inherited by all child routes and can 
   # overwritten on each.
@@ -39,7 +39,7 @@ route:
   # This routes performs a regular expression match on alert labels to
   # catch alerts that are related to a list of services.
   - match_re:
-      service: example-random
+       group: production
     receiver: team-X-mails
 
     # The service has a sub-route for critical alerts, any alerts
@@ -56,7 +56,7 @@ route:
 
     routes:
     - match:
-        severity: critical
+        severity: page
       receiver: team-Y-pager
 
   # This route handles all alerts coming from a database service. If there's
