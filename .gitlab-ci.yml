@@ -4,8 +4,6 @@
 before_script:
   - export IMAGE_TAG=$CI_REGISTRY_IMAG:$(git rev-parse --short=8 $CI_COMMIT_SHA)
 
- 
-
 build-mater:
   stage: build
   tags:
