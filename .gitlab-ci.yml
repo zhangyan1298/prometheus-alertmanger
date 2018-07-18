@@ -27,7 +27,7 @@ build-deploy:
    - master-shell
   script:
     - id
-    - who
+    - echo $IMAGE_TAG
     - kubectl apply -f alertmanger-k8s.yaml -n prod
   only:
     - master
