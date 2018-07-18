@@ -28,7 +28,7 @@ build-deploy:
   script:
     - id
     - echo $IMAGE_TAG
-    - sed -i /image\:/s/dockeryanxiao\/[aA-zZ][0-9]/dockeryanxiao\/$IMAGE/  alertmanger-k8s.yaml
+    - sed -i s/dockeryanxiao\/[aA-zZ][0-9]/dockeryanxiao\/$IMAGE/  alertmanger-k8s.yaml
 #    - kubectl apply -f alertmanger-k8s.yaml -n prod
     - kubectl set image deployment/alertmanger-persiten  alertmanger-test=dockeryanxiao/$IMAGE -n prod
   only:
