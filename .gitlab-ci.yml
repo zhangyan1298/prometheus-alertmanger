@@ -2,7 +2,7 @@
 # Official docker image.
 image: docker:latest
 
- services:
+services:
   - docker:dind
 before_script:
   - export IMAGE_TAG=$CI_REGISTRY_IMAG:$(git rev-parse --short=8 $CI_COMMIT_SHA)
