@@ -4,6 +4,8 @@ global:
   smtp_from: 'zyx956043615@163.com'
   smtp_auth_username: 'zyx956043615@163.com'
   smtp_auth_password: 'xxxxx'
+  #smtp on starttls set
+  smtp_require_tls: false
 # The root route on which each incoming alert enters.
 route:
   # The root route must not have any matchers as it is the entry point for
