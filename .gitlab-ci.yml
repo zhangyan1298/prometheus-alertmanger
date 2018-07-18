@@ -15,6 +15,7 @@ before_script:
 build-mater:
   stage: build
   tags:
+   - master-shell
    - docker
   script:
 #    - export IMAGE_TAG=dockeryanxiao/$CI_REGISTRY_IMAG:$CI_COMMIT_REF_NAME
